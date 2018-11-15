@@ -1,0 +1,68 @@
+body{
+    background-color: azure;
+}
+
+.title_content{
+    text-align: center;
+}
+
+h1#title{
+    text-align: center;
+}
+
+.title_content p{
+    position: relative;
+}
+
+.submit_content{
+
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background-color: aquamarine;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.submit_content #submit_title{
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%, -50%);
+}
+
+.submit_content #submit_form{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+input .input_code #upload {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+
+.submit_loading{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    background-color:#000;
+    text-align:center;
+    opacity:0.3;
+}
+.loading_show{
+    margin-top:15%;
+}
+.loading_context{
+    color:#fff;
+}

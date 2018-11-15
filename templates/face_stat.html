@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>This Face Emotion Stat</title>
+    <script src="{% static 'js/face_stat.js' %}"></script>
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/echarts.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/face_stat.css' %}">
+</head>
+<body>
+    <h1 id="title" class="head">The NO. {{ face_id }} Emotion Stat</h1>
+
+    <div id="time_list">
+        <h5>The NO. {{ face_id }} person appeared at:</h5>
+        <div class="face_img"></div>
+        <script>
+            // let face_url = "<img src=http://127.0.0.1:8000/static/media/faces/p_" + {{ face_id }} + '.jpg/>';
+            let face_url = "<img src=http://localhost:8888/static/result/person/p_" + {{ face_id }} + '.jpg/>';
+            $(".face_img").append(face_url);
+            let time_lst = {{ time_lst|safe }};
+            add_time_list(time_lst);
+        </script>
+    </div>
+
+    <div id="face_chart" align="center">
+        <script type="text/javascript">
+            let face_id = {{ face_id }};
+            $.getJSON("{% static '/result/data/brief.json' %}", function(json){
+                plot_bar_chart(json[face_id]);
+            })
+
+        </script>
+    </div>
+</body>
+</html>

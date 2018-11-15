@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <title>Facial Expression Recognition</title>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/echarts.min.js' %}"></script>
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+</head>
+<body>
+    <div class="main_content">
+
+        <div class="title_content">
+            <h1 id="title">Facial Expression Recognition</h1>
+            <br>
+        </div>
+
+        <div class="submit_content">
+
+            <div id="submit_title">
+                <h3>Please upload your video</h3>
+                <p>as follow</p>
+            </div>
+
+            <div id="submit_form">
+                <form id="upload-form" action="{% url 'upload_progress' %}" method="post" enctype="multipart/form-data" >
+                    {% csrf_token %}
+                　　　<input type="file" id="upload" name="upload" class="input_code" />
+                     <label for="file">Choose a file</label>
+                　　　<input class="submit" id="submit" type="submit" value="Calculating" />
+                </form>
+            </div>
+
+
+            <div id="loading" class="submit_loading" style="display:none">
+                <div class="loading_show">
+                    <img src="{% static 'media/image/loading.gif' %}">
+                    <p class="loading_context">Calculating....</p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <script>
+            loading_adding()
+        </script>
+
+    </div>
+</body>
+</html>

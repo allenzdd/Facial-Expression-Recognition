@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <title>Faces Stat</title>
+    <script src="{% static 'js/chart.js' %}"></script>
+    <script src="{% static 'js/echarts.min.js' %}"></script>
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/chart.css' %}">
+
+    <link href="//vjs.zencdn.net/5.19/video-js.min.css" rel="stylesheet">
+    <script src="//vjs.zencdn.net/5.19/video.min.js"></script>
+
+</head>
+<body>
+    <div align="center" class="charts">
+        <h1 id="title">Faces Stat</h1>
+        <p>Please click bellow faces, then look the emotion stat</p>
+        <div class="faces">
+            <script type="text/javascript">
+                $.getJSON("{% static '/result/data/brief.json' %}",function (json) {
+                    plot_faces(json)
+                })
+            </script>
+        </div>
+        <div id="video_show">
+            <h3 class="title">Result video as here</h3>
+            <video id="my-video" class="video-js" controls preload="auto" width="640" height="264"
+            data-setup="{}">
+                <source src="{% static 'result/video/output.webm' %}" type='video/webm'>
+                <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider upgrading to a web browser that
+                <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                </p>
+            </video>
+        </div>
+
+
+
+    </div>
+
+
+
+</body>
+</html>
