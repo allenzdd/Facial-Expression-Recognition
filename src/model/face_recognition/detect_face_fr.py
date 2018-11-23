@@ -4,7 +4,6 @@ import argparse
 import json
 from utils_hhh import get_yolo_boxes, makedirs, preprocess_input, split_batch_boxes, remove_duplication_boxs
 from b_box import draw_boxes, write2txt
-from tqdm import tqdm
 import numpy as np
 import cv2
 from emotion_analysis_small import emotion_analysis

@@ -1,0 +1,8 @@
+django
+numpy
+pandas
+opencv-python
+Pillow
+tensorflow
+keras
+scipy
