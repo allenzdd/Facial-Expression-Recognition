@@ -206,7 +206,9 @@ def main(video_url, frame_size=1):
 
 if __name__ == '__main__':
     frame_size = 1
-    main("videos/AdamSavage_2008P-480p.mp4", frame_size=frame_size)
+    video_path = sys.argv[1]
+    # main("videos/AdamSavage_2008P-480p.mp4", frame_size=frame_size)
+    main(video_path, frame_size=frame_size)
 
 
     

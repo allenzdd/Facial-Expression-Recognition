@@ -4,7 +4,7 @@
 
 https://drive.google.com/open?id=1BhKRwCX2g96LTiGAm3VtsnnFAYJnUF9J
 
-Please down this file at ./src/model/face_recognition/yolo3/
+Please down this file at `./src/model/face_recognition/model_data/`
 
 #### 2. Install python package
 
@@ -55,4 +55,3 @@ The result file path is `./static/result/`
 #### 5. Environment
 
 I develop this application in the python3 at ubuntu, so the python3 command is `python`, if your python3 command is `python3`, please change `demo_for_local.sh` file.
-
