@@ -9,7 +9,6 @@ import sys
 
 sys.path.append(os.getcwd() + '/src/model/face_recognition')
 
-
 import cv2
 import numpy as np
 import pandas as pd
@@ -39,7 +38,8 @@ def main(video_url, frame_size=1):
     nms_max_overlap = 1.0
     
    # deep_sort 
-    model_filename = '/home/dzha4889/face_recogonition_application/demo/src/model/face_recognition/model_data/mars-small128.pb'
+    root_path = os.getcwd()
+    model_filename = root_path + '/src/model/face_recognition/model_data/mars-small128.pb'
     encoder = gdet.create_box_encoder(model_filename,batch_size=1)
     
     metric = nn_matching.NearestNeighborDistanceMetric("cosine", max_cosine_distance, nn_budget)

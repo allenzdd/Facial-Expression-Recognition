@@ -2,3 +2,6 @@
 .DS_Store
 .gitattributes
 .gitignore
+.DS_Store
+src/.DS_Store
+src/model/.DS_Store

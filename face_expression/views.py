@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from .forms import UploadFileForm
 from face_expression.models import UploadVideos
-from .demo_test import main
 from src.for_web.calculate_time import calculate_video_time
 from src.model.face_recognition.demo import main as FR
 
@@ -20,8 +19,16 @@ def demo(request):
     try:
         cmd = 'rm static/result/video/output.webm'
         cmd_person = 'rm -rf static/result/person/*'
+        cmd_videos = 'rm -rf static/media/*.mp4'
         os.system(cmd)
         os.system(cmd_person)
+        os.system(cmd_videos)
+    except:
+        pass
+    try:
+        videos = UploadVideos()
+        lst = videos.objects.all()
+        lst.delete()
     except:
         pass
     return render(request, 'demo.html')

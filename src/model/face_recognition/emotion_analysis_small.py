@@ -4,6 +4,9 @@ from keras.models import load_model
 import numpy as np
 from utils_hhh import plot_histogram_opencv, face_location_encoding
 
+import os
+root_path = os.getcwd()
+
 class emotion_dict:
     def __init__(self):
         self.emotion_dict = {}
@@ -24,8 +27,8 @@ class calculate_emotion_dict:
 class emotion_analysis:
     def __init__(self):
         # parameters for loading data and images
-        self.emotion_model_path = '/home/dzha4889/face_recogonition_application/demo/src/model/face_recognition/pretrained_models/fer2013_mini_XCEPTION.102-0.66.hdf5'
-
+        # self.emotion_model_path = '/home/dzha4889/face_recogonition_application/demo/src/model/face_recognition/pretrained_models/fer2013_mini_XCEPTION.102-0.66.hdf5'
+        self.emotion_model_path = root_path + "/src/model/face_recognition/pretrained_models/fer2013_mini_XCEPTION.102-0.66.hdf5"
         # hyper-parameters for bounding boxes shape
         # loading models
         self.emotion_classifier = load_model(self.emotion_model_path, compile=False)
