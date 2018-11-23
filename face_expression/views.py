@@ -5,10 +5,7 @@ from .demo_test import main
 from src.for_web.calculate_time import calculate_video_time
 from src.model.face_recognition.demo import main as FR
 
-# convert avi to webm
-import subprocess
-import shlex
-# import os
+import os
 
 
 
@@ -22,12 +19,9 @@ def chart(request):
 def demo(request):
     try:
         cmd = 'rm static/result/video/output.webm'
-        subprocess.Popen(shlex.split(cmd))
-    except:
-        pass
-    try:
-        cmd_person = 'rm static/result/person/*'
-        subprocess.Popen(shlex.split(cmd_person))
+        cmd_person = 'rm -rf static/result/person/*'
+        os.system(cmd)
+        os.system(cmd_person)
     except:
         pass
     return render(request, 'demo.html')
@@ -42,8 +36,9 @@ def upload_progress(request):
         videos.save()
 
         FR("static/media/" + str(temp))
+        # convert avi to webm
         cmd = "ffmpeg -i static/result/video/output.avi -cpu-used 8 -threads 16  static/result/video/output.webm"
-        subprocess.Popen(shlex.split(cmd))
+        os.system(cmd)
 
         return render(request, 'charts.html')
 
