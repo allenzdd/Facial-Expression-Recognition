@@ -1,0 +1,1 @@
+python ./src/model/face_recognition/demo.py $1

@@ -46,9 +46,13 @@ There are this face detected time, and emotion data summary chart at that, and e
 
 #### 4. In the own computer
 
-If you want to run the application at your own computer, you need run this code:
+If you want to run the application at your own computer, you need get your video path and run this code:
 
 `./demo_for_local.sh your_video_path`
 
 The result file path is `./static/result/`
+
+#### 5. Environment
+
+I develop this application in the python3 at ubuntu, so the python3 command is `python`, if your python3 command is `python3`, please change `demo_for_local.sh` file.
 
