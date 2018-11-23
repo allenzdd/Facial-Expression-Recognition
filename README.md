@@ -32,15 +32,15 @@ After you put the code on your servers by ssh, and at your computer, please run 
 Next step, on your computer browser, input the address
 http://localhost:8888/demo , the page look like:
 
-![upload_page](./readme_img/upload_page.png)
+<img src="./readme_img/upload_page.png" width="400" hegiht="600" align=center />
 
 You can upload your video, and click 'Calculate' button to run this model. When the running is finish, the result page look like:
 
-![result_sum_page](./readme_img/result_sum_page.png) 
+<img src="./readme_img/result_sum_page.png" width="400" hegiht="600" align=center />
 
 There are each detected face and result video in the result summary page, and you can click each face go to the face stat page, look like:
 
-![face_stat_page](./readme_img/face_stat_page.png)
+<img src="./readme_img/face_stat_page.png" width="400" hegiht="600" align=center />
 
 There are this face detected time, and emotion data summary chart at that, and each frame detail data you can download from your servers file path is `./static/result/data/`. 
 
