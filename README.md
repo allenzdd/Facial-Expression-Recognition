@@ -55,3 +55,18 @@ The result file path is `./static/result/`
 #### 5. Environment
 
 I develop this application in the python3 at ubuntu, so the python3 command is `python`, if your python3 command is `python3`, please change `demo_for_local.sh` file.
+
+#### 6. Problem (Need Improved)
+
+1. Improve the FPS.
+
+   Now, the face detection model is MTCNN, and face comparison model is FaceNet, both from `face_recognition`. A new and light model by developer is better.
+
+2. Using combined model.
+
+   Now there are many stages, I believe that a combined model that combining many previous stages is better.
+
+3. Web Application suitable for every condition.
+
+   Now, the web application (front-end and back-end) used a localhost API connect (localhost:8888/xxxx), so if you change your address, many static material would not appear, so I think using a link that can be used in everywhere is better.
+
